@@ -20,9 +20,9 @@
     Status: <span id="status">Loading...</span>
 
     <script type="text/javascript">
-        import detectEthereumProvider from '@metamask/detect-provider';
+       
 
-const provider = await detectEthereumProvider();
+
         async function loadWeb3() {
         updateStatus('Detecting Metamask');
             if (provider) {
