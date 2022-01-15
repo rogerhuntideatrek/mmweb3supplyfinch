@@ -20,10 +20,14 @@
     Status: <span id="status">Loading...</span>
 
     <script type="text/javascript">
+        import detectEthereumProvider from '@metamask/detect-provider';
+
+const provider = await detectEthereumProvider();
         async function loadWeb3() {
-            if (window.ethereum) {
+            if (provider) {
                 window.web3 = new Web3(window.ethereum);
                 window.ethereum.enable();
+              updateStatus('MetaMask Detected');
             }
         }
 
